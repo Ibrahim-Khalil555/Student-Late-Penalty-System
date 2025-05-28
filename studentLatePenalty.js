@@ -13,14 +13,13 @@ function checkAttendTime(minutes) {
     let classStart = 600;
     let penaltyTime = 5;
     let finePerPoint = 10;
+    let late = minutes - classStart;
     
     if (minutes<=classStart+penaltyTime) {
       return 'Allow';
     }
 
-    let late = minutes - classStart;
-
-    if (late > 30) {
+    else if (late > 30) {
       return 'Do Not Allow';
     }  
 
